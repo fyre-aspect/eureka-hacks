@@ -746,3 +746,7 @@ To keep the 24-hour scope sane, **explicitly exclude**:
 6. Hit **"Simulate"** — physics engine takes over, box slides down ramp, hits the balls.
 7. Hit **"Reset"** and load the Newton's Cradle sample. Let it run. Audience goes "oh."
 8. Pitch: "Every PhET simulation is hand-built. Ours lets you sketch any scenario and run it instantly. That's the gap."
+
+## External Codebases
+
+* [FlowBoard-AI](https://github.com/Fyre-Aspect/FlowBoard-AI): An AI-powered video storyboarding tool. We will be integrating its logic for sketch-to-video generation.

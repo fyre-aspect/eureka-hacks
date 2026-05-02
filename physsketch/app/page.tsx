@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -60,6 +61,28 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <section className="flex flex-col items-center gap-8 p-24 text-center md:grid-cols-3">
+        <div className="rounded-xl border border-white/10 bg-slate-800 p-6">
+          <h3 className="text-2xl font-bold">🎨 Draw</h3>
+          <p className="mt-2 text-slate-400">a scene</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-slate-800 p-6">
+          <h3 className="text-2xl font-bold">🤖 Parse</h3>
+          <p className="mt-2 text-slate-400">with AI</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-slate-800 p-6">
+          <h3 className="text-2xl font-bold">▶ Run</h3>
+          <p className="mt-2 text-slate-400">physics</p>
+        </div>
+      </section>
+      <p className="mt-24 text-center text-lg text-slate-400">
+        "No pre-built simulations. Just your drawing and a physics engine."
+      </p>
+      <Link href="/simulate">
+        <span className="mt-8 inline-block rounded-lg bg-indigo-500 px-8 py-3 text-lg font-medium text-white transition-all duration-200 hover:bg-indigo-400">
+          Open Whiteboard →
+        </span>
+      </Link>
     </div>
   );
 }

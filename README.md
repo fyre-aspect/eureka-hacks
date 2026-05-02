@@ -143,6 +143,8 @@ Hit the **"Load Sample"** button to instantly load a pre-verified scene:
 
 Built at **EUReka Hacks 2026** in 24 hours.
 
+Inspired by logic from [FlowBoard-AI](https://github.com/Fyre-Aspect/FlowBoard-AI).
+
 ---
 
 ## License
