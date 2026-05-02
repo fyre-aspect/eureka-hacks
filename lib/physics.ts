@@ -11,7 +11,6 @@ export function cleanup() {
   if (runner) Runner.stop(runner);
   if (render) {
     Render.stop(render);
-    render.canvas.remove();
   }
   if (engine) Engine.clear(engine);
   engine = null; render = null; runner = null;

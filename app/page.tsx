@@ -78,11 +78,18 @@ export default function Home() {
       <p className="mt-24 text-center text-lg text-slate-400">
         "No pre-built simulations. Just your drawing and a physics engine."
       </p>
-      <Link href="/simulate">
-        <span className="mt-8 inline-block rounded-lg bg-indigo-500 px-8 py-3 text-lg font-medium text-white transition-all duration-200 hover:bg-indigo-400">
-          Open Whiteboard →
-        </span>
-      </Link>
+      <div className="mt-8 flex gap-4">
+        <Link href="/build">
+          <span className="inline-block rounded-lg bg-emerald-500 px-8 py-3 text-lg font-medium text-white transition-all duration-200 hover:bg-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+            Open Builder →
+          </span>
+        </Link>
+        <Link href="/simulate">
+          <span className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-lg font-medium text-white transition-all duration-200 hover:bg-indigo-400">
+            Open Whiteboard →
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
