@@ -14,17 +14,26 @@ export default function SimulatePage() {
   const { mode, scene } = useAppStore();
 
   return (
-    <div className="flex h-screen flex-col">
-      <Toolbar />
-      <main className="flex flex-1 pt-16">
-        <div className="flex-1">
-          {mode === 'draw' && <Whiteboard ref={whiteboardRef} />}
+    <div className="flex h-screen flex-col bg-slate-950 font-sans text-slate-100 selection:bg-indigo-500/30">
+      <Toolbar whiteboardRef={whiteboardRef} />
+      
+      <main className="flex flex-1 pt-20 pb-4 px-4 gap-4 overflow-hidden">
+        {/* Main Canvas Area */}
+        <div className="relative flex-1 rounded-2xl bg-slate-900/50 border border-white/5 shadow-2xl overflow-hidden backdrop-blur-sm flex flex-col">
+          {mode === 'draw' && (
+            <div className="absolute inset-0 z-10">
+              <Whiteboard ref={whiteboardRef} />
+            </div>
+          )}
+          
           {(mode === 'parsed' || mode === 'simulating') && scene && (
-            <div className="w-full h-full flex items-center justify-center">
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-[#0f172a]">
               <SimulationCanvas scene={scene} />
             </div>
           )}
         </div>
+        
+        {/* Right Sidebar */}
         <ObjectPanel />
       </main>
     </div>

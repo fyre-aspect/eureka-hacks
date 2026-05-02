@@ -18,7 +18,7 @@ export function cleanup() {
 }
 
 function objectToBody(obj: PhysicsObject): Matter.Body | null {
-  const opts: Matter.IBodyDefinition = {
+  const opts: any = {
     label: obj.id,
     isStatic: obj.isStatic ?? false,
     restitution: obj.restitution ?? 0.3,

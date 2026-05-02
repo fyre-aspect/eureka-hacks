@@ -68,7 +68,7 @@ export async function parseSketch(imageBase64: string): Promise<PhysicsScene> {
     model: 'gemini-2.5-flash',
     generationConfig: {
       responseMimeType: 'application/json',
-      responseSchema: RESPONSE_SCHEMA,
+      responseSchema: RESPONSE_SCHEMA as any,
     },
     systemInstruction: SYSTEM_PROMPT,
   });

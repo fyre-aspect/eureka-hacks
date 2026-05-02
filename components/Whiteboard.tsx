@@ -19,7 +19,7 @@ const Whiteboard = forwardRef<WhiteboardHandle>((_, ref) => {
       if (shapeIds.size === 0) {
         throw new Error('Canvas is empty');
       }
-      const { blob } = await editor.toImage([...shapeIds], { type: 'png', background: true });
+      const { blob } = await editor.toImage([...shapeIds], { format: 'png', background: true } as any);
       return new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
         reader.onloadend = () => {
