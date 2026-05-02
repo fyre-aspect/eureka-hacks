@@ -6,18 +6,33 @@ import { PhysicsScene, PhysicsObject } from '@/lib/types';
 
 export default function BuildPage() {
   const [gravityEnabled, setGravityEnabled] = useState(false);
+  const [rampAngle, setRampAngle] = useState(20);
 
   const initialObjects: PhysicsObject[] = [
     {
       id: 'falling-box',
       role: 'block',
       shape: 'rectangle',
-      x: 400,
+      x: 250,
       y: 100,
       width: 60,
       height: 60,
       color: '#ec4899', // pink-500
-      restitution: 0.8, // Bouncy!
+      restitution: 0.4, // Less bouncy so it slides well
+      friction: 0.1,
+    },
+    {
+      id: 'adjustable-ramp',
+      role: 'ramp',
+      shape: 'rectangle',
+      x: 400,
+      y: 400,
+      width: 500,
+      height: 20,
+      angleDeg: rampAngle,
+      isStatic: true,
+      color: '#14b8a6', // teal-500
+      friction: 0.1,
     },
     {
       id: 'ground',
@@ -48,7 +63,20 @@ export default function BuildPage() {
           </Link>
           <h1 className="text-xl font-bold">Physics Builder</h1>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
+          <div className="flex flex-col items-center gap-1">
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+              Ramp Angle: {rampAngle}°
+            </label>
+            <input 
+              type="range" 
+              min="-45" 
+              max="45" 
+              value={rampAngle} 
+              onChange={(e) => setRampAngle(Number(e.target.value))}
+              className="w-32 accent-teal-500"
+            />
+          </div>
           <button
             onClick={() => setGravityEnabled(!gravityEnabled)}
             className={`rounded-lg px-6 py-2 font-semibold transition-all duration-200 ${
